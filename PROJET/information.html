@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Information</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+   <link href="css/styleInformation.css" rel="stylesheet">
+
+   <!-- Vendor CSS Files -->
+   <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+   <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+   <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+   <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+
+</head>
+
+<body>
+    <style>/*--------------------------------------------------------------
+        # Header
+        --------------------------------------------------------------*/
+        #header {
+          background: #fff;
+          transition: all 0.5s;
+          z-index: 997;
+          padding: 12px 0px;
+          box-shadow: 0px 2px 15px rgba(204, 25, 25, 0.1);
+          
+        }
+        
+        #header.header-scrolled {
+          top: 0;
+        }
+        
+        #header .logo {
+          font-size: 30px;
+          margin: 0;
+          padding: 0;
+          line-height: 1;
+          font-weight: 700;
+          letter-spacing: 0.5px;
+        }
+        
+        #header .logo a {
+          color: transparent;
+          font-family: cursive;
+        }
+        
+        #header .logo img {
+          max-height: 40px;
+        }
+        
+        #header .logo span {
+          color: #1348aa;
+          font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .heading{
+          width: 90%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          text-align: center;
+          margin: 20px auto;
+        }
+        .heading h1{
+          font-size: 30px;
+          color: #000;
+          margin-bottom: 25px;
+          position: relative;
+          padding-top: 100px;
+        }
+        
+        .heading h1::after{
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 4px;
+          display: block;
+          margin: 0 auto ;
+          background-color: #000000;
+        }
+        
+        .heading p{
+          font-size: 14px;
+          color: #000000;
+          padding: 5px 10px;
+        }
+        
+        .tout{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+        .image{
+          flex: 1;
+          overflow: hidden;
+        }
+        .image img{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          transition: 0.5s ease;
+        }
+        
+        .content{
+          flex: 1;
+        }
+        .content h2{
+          font-size: 20px;
+          margin-bottom: 15px;
+          color: #000000;
+        }
+        .content p{
+          font-size: 16px;
+          line-height: 1.5;
+          color: #000000;
+        }
+        
+        @media screen and  (max-width: 768px){
+          .heading{
+              padding: 0px 20px;
+          }
+          .heading h1{
+              font-size: 36px;
+          }
+          .heading p{
+              font-size: 17px ;
+              margin-bottom: 0px;
+          }
+          .container{
+              padding: 0px;
+          }
+          .tout{
+              padding: 20px;
+              flex-direction: column;
+          }
+          .image{
+              margin-right: 0px;
+              margin-bottom: 20px;
+          }
+          .content p {
+              padding: 0px;
+              font-size: 16px;
+          }
+        
+        
+          
+        }
+        /*--------------------------------------------------------------
+        # Navigation Menu
+        --------------------------------------------------------------*/
+        /**
+        * Desktop Navigation 
+        */
+        .navbar {
+        padding: 0;
+        }
+        
+        .navbar ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        align-items: center;
+        }
+        
+        .navbar li {
+        position: relative;
+        }
+        
+        .navbar > ul > li {
+        position: relative;
+        white-space: nowrap;
+        padding: 8px 0 5px 45px;
+        }
+        
+        .navbar a, .navbar a:focus {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #642c2c;
+        white-space: nowrap;
+        transition: 0.3s;
+        border-bottom: 2px solid #fff;
+        padding: 5px 2px;
+        }
+        
+        .navbar a i, .navbar a:focus i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        }
+        
+        .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+        color: #cc1919;
+        border-color: #cc1919;
+        }
+        
+        
+        /**
+        * Mobile Navigation 
+        */
+        
+        /* Afficher le bouton de menu mobile */
+        .mobile-nav-toggle {
+        color: #642c2c;
+        font-size: 28px;
+        cursor: pointer;
+        display: none;
+        line-height: 0;
+        transition: 0.5s;
+        }
+        
+        .mobile-nav-toggle.bi-x {
+        color: #fff;
+        }
+        /* Afficher le menu mobile lorsqu'il est activé */
+        @media (max-width: 991px) {
+          .mobile-nav-toggle {
+            display: block;
+          }
+          .navbar ul {
+            display: none;
+          }
+        }
+        
+        .navbar-mobile {
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(65, 28, 28, 0.9);
+        transition: 0.3s;
+        z-index: 999;
+        }
+        
+        .navbar-mobile .mobile-nav-toggle {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        }
+        
+        .navbar-mobile ul {
+        display: block;
+        position: absolute;
+        top: 55px;
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 0;
+        background-color: #fff;  
+        overflow-y: auto;  
+        transition: 0.3s;    
+        }
+        
+        .navbar-mobile > ul > li {
+        padding: 0;
+        }
+        
+        .navbar-mobile a {
+        padding: 10px 20px;
+        font-size: 15px;
+        color: #642c2c;
+        border: none;
+        }
+        
+        .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+        color: #c03f3f;
+        }
+        
+        .navbar-mobile .getstarted {
+        margin: 15px;
+        }
+        
+        
+        
+        /*--------------------------------------------------------------
+        # Back to top button
+        --------------------------------------------------------------*/
+        .back-to-top{
+        position: fixed;
+        visibility: hidden;
+        opacity: 0;
+        right: 15px;
+        bottom: 15px;
+        z-index: 996;
+        background: #cc1919;
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        transition: all 0.4s;
+        }
+        
+        .back-to-top i {
+        font-size: 28px;
+        color: #fff;
+        line-height: 0;
+        }
+        
+        .back-to-top:hover {
+        background: #e52929;
+        color: #fff;
+        }
+        
+        .back-to-top.active {
+        visibility: visible;
+        opacity: 1;
+        }</style>
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+    
+            <h1 class="logo me-auto">
+                <a href="index.php">
+                  <img src="img/logo.png" alt=""><span>atra</span>
+                </a>
+            </h1>
+        
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                  <li><a class="nav-link scrollto active" href="#Pourquoi donner?">Pourquoi donner?</a></li>
+                  <li><a class="nav-link scrollto" href="#Le deroulement d'un don">Le deroulement d'un don</a></li>
+                  <li><a class="nav-link scrollto" href="#Qui a besoin?">Qui a besoin?</a></li>
+                 <li><a class="nav-link scrollto" href="#Qui peut donner?">Qui peut donner?</a></li>      
+                 <li><a class="nav-link scrollto" href="#Constituants du sang">Composants du sang </a></li>
+                 <li><a class="nav-link scrollto" href="#Comment s'engager?">Comment s'engager?</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+         
+        </div>
+    </header><!-- End Header -->
+
+
+   <section id="Pourquoi donner?" >
+        <div class="heading">
+           <h1>Pourquoi donner?</h1>
+           <p>Donner du sang est un acte de générosité et de solidarité qui permet de sauver des vies.
+            Le sang est essentiel pour la vie et il n'y a pas de substitut artificiel qui peut remplacer le sang humain.
+           </p>
+        </div>
+        <div class="container" data-aos="fade-up" >   
+            <div class="tout">    
+                <div class="image">
+                   <img src="img/pkdonner.png" alt="">
+                </div>
+
+                <div class="content">
+                   <p>Donner du sang est une façon de faire une différence dans la vie de quelqu'un.
+                    Il s'agit de sauver une vie, c'est donner l'espoir de vivre. <br> <br>
+                    En donnant régulièrement du sang, vous aidez à réapprovisionner les réserves en cas de catastrophe naturelle, 
+                    d'urgence nationale ou de pandémie. <br>
+                    Comme ça réduit le risque de maladies cardiovasculaires, de cancer et de maladies du foie du donneur.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<br><br><br><br>
+
+
+    <section id="Le deroulement d'un don" >
+        <div class="heading">
+            <h1>Le deroulement d'un don</h1>
+            <p>Donner du sang est un acte de générosité et de solidarité qui permet de sauver des vies.
+            Le sang est essentiel pour la vie et il n'y a pas de substitut artificiel qui peut remplacer le sang humain.
+            </p>
+        </div>
+        <div class="container" data-aos="fade-up">
+            <div class="tout">
+                <div class="image">
+                   <img src="img/etapes1.png" alt="">
+                </div>
+                <div class="content">
+                
+
+
+
+                  La durée totale de ces 5 étapes est d’environ une heure.
+                  Il est recommandé de ne pas venir à jeun et de bien boire avant et après de don. <br> <br>
+                  
+                  1- Inscription : Vous êtes accueillie par une secrétaire , vous remplissez le questionnaire. <br> <br> 
+                  
+                  2- Examen : Vous passez un entretien pré don afin de déterminer votre aptitude au don (un examen médical ) . <br> <br>
+                  
+                  3- Le prélèvement du sang : cette étape dure de 7 à 10 minutes et permet de prélever entre 380 et 480 ml de sang . <br> <br>
+                  
+                  4- En-cas et repos : vous restez sous la surveillance de l’équipe médicale dans l’espace repos  ou une collation vous est offerte.Après un don, il est important de boire beaucoup et de manger . <br>
+                    
+                </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<br><br><br><br>
+
+<section id="Qui a besoin?">
+    <div class="heading">
+        <h1>Qui a besoin?</h1>
+        <p>Le sang est rarement utilisé sous forme de sang
+            total. Les différents composants du sang sont
+            séparés et les malades ne reçoivent que la
+            fraction qui leur fait défaut ou celle qui est
+            nécessaire à leur traitement.
+        </p>
+   </div>
+   <div class="container" data-aos="fade-up">
+        <div class="tout">
+            <div class="image">
+               <img src="img/quiadesoin" alt="">
+            </div>
+
+            <div class="content">
+                <p>
+                    
+                    <span> Globules rouges : </span>Les personnes victimes d'anémie, Les personnes atteintes de maladies du sang (Drépanocytose / Thalassémie…), Lors d’interventions chirurgicales <br> <br>
+                    <span> Protéines issues du plasma : </span>Les grands brûlés, leshémophiles, les patients souffrant de troubles de la coagulation ou de déficit immunitaire grave <br> <br>
+                    <span> Plaquettes : </span>Les personnes atteintes de leucémie, aplasie médullaire, où qui subissent des traitements lourds (chimiothérapie, radiothérapie) 
+                
+                </p>
+            </div>
+        </div>
+   </div>
+</section>
+ <br> <br> <br> 
+
+    <section id="Qui peut donner?">
+        <div class="heading">
+            <h1>Qui peut donner?</h1>
+            <p>Le don de sang est ouvert à toute personne en bonne santé, 
+                âgée de 18 à 70 ans (selon les pays), 
+                pesant au moins 50 kg et répondant à certains critères spécifiques.
+            </p>
+       </div>
+       <div class="container" data-aos="fade-up">
+            <div class="tout">
+                <div class="image">
+                   <img src="img/donner.jpg" alt="">
+                </div>
+
+                <div class="content">
+                    <p>
+
+                        Les critères généraux pour donner du sang sont : <br> <br>
+                         -Être en bonne santé :avoir une bonne santé générale et ne pas présenter de symptômes de maladies infectieuses. <br> <br>
+                         -Avoir un âge minimum : L'âge minimum est 18 ans. <br> <br>
+                         -Respecter le poids minimum : peser au moins 50 kg. <br> <br>
+                         -Ne pas avoir récemment subi de chirurgie. <br> <br>
+                         -Ne pas avoir de risque de transmission de maladies :il faut déterminer s'ils ont un risque accru de transmettre des maladies par le sang, comme le VIH, l'hépatite B et C. <br> <br>
+                        
+                        En outre, les donneurs de sang en Algérie doivent être de nationalité algérienne ou résider en Algérie depuis au moins 6 mois.
+                        
+                    
+                    </p>
+                </div>
+            </div>
+       </div>
+    </section>
+
+<br><br><br><br>
+
+  <section id="Constituants du sang" >
+        <div class="heading">
+           <h1>Constituants du sang</h1>
+           <p>
+            Le sang est rarement utilisé sous forme de sang total, 
+            les différents composants du sang sont séparés et les malades ne reçoivent que la fraction
+            qui est nécessaire à leur traitement.
+
+           </p>
+        </div>
+        <div class="container" data-aos="fade-up">
+            <div class="tout">
+               <div class="image">
+                   <img src="img/composants" alt="">
+                 </div>
+                <div class="content">
+                    <p>
+                     <span>  Globule rouge : </span>  qui transportent l'oxygène dédiés aux victimes d'anémie , maladies du sang , lors d’interventions chirurgicales. <br> <br> <br>
+
+                     <span>   Plasma : </span>qui est un liquide jaunâtre qui transporte les cellules sanguines et les nutriments pour les grands brûlés, les hémophiles, déficit immunitaire . <br> <br> <br>
+
+                     <span>  Plaquettes : </span>qui aident à la coagulation pour personnes atteintes de leucémie, et qui subissent les traitements lourds ( chimiothérapie, radiothérapie) . 
+
+                    </p>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+    <section id="Comment s'engager?" >
+        <div class="heading">
+           <h1>Comment s'engager?</h1>
+           <p>
+
+           </p>
+        </div>
+        <div class="container" data-aos="fade-up">
+            <div class="tout">
+               <div class="image">
+                   <img src="img/engager.png" alt="">
+                 </div>
+                <div class="content">
+                    <p>Notre présence dans différents endroits vous simplifie la tâche.
+                        Inscrivez-vous sur notre site et séléctionez l'établissement le plus proche pour vous.
+                    </p>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    
+  <!-- Vendor JS Files -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vensdor/php-email-form/validate.js"></script>
+  <script src="vendor/purecounter/purecounter.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+<br><br><br><br>
+<script src="js/info.js"></script>
+
+
+</body>
+</html>
